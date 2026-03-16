@@ -23,6 +23,11 @@
     <!-- Main App Container -->
     <div id="app">
         
+        <!-- Voice Button (Floating, Always Visible) -->
+        <button id="voiceBtn" class="voice-btn" title="Read aloud">
+            🔊
+        </button>
+
         <!-- iPhone Status Bar -->
         <div class="status-bar">
             <div class="time" id="currentTime">8:00</div>
@@ -33,17 +38,20 @@
             </div>
         </div>
 
-        <!-- Sticky Header with Stats -->
+        <!-- Sticky Header with Navigation -->
         <div class="sticky-header">
             <div class="header-content">
-                <div class="app-title">
-                    <span id="headerIcon">🌟</span>
-                    <span id="headerTitle">Brio</span>
+                <div class="header-left">
+                    <button class="back-btn hidden" id="backBtn">←</button>
+                    <div class="app-title">
+                        <span id="headerIcon">🌟</span>
+                        <span id="headerTitle">Brio</span>
+                    </div>
+                    <button class="home-btn hidden" id="homeBtn" title="Home">🏠</button>
                 </div>
                 <div class="stats-inline">
                     <span id="streakDisplay">🔥 <span id="streakDays">0</span></span>
                     <span id="xpDisplay">⭐ <span id="totalXP">0</span></span>
-                    <span id="levelDisplay">🏆 <span id="currentLevel">1</span></span>
                 </div>
             </div>
         </div>

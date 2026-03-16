@@ -87,6 +87,49 @@ const BrioAudio = {
         }
 
         this.speak(textToRead);
+    },
+
+    /**
+     * Read current screen content aloud
+     */
+    readCurrentScreen() {
+        const voiceBtn = document.getElementById('voiceBtn');
+        
+        // Stop if already speaking
+        if (this.synth && this.synth.speaking) {
+            this.stop();
+            if (voiceBtn) voiceBtn.classList.remove('speaking');
+            return;
+        }
+
+        // Get text from current view
+        const mainContent = document.getElementById('main-content');
+        if (!mainContent) return;
+
+        // Try to get modal content first (if modal is open)
+        const modalBody = document.querySelector('.modal-body');
+        const contentSource = modalBody || mainContent;
+
+        // Get title and text
+        const titleEl = contentSource.querySelector('.step-title, .card-title, .modal-title, h1, h2, h3');
+        const textEl = contentSource.querySelector('.step-text, .card-text, .practice-prompt, p');
+        
+        let textToSpeak = '';
+        if (titleEl) textToSpeak += titleEl.textContent + '. ';
+        if (textEl) textToSpeak += textEl.textContent;
+
+        if (textToSpeak && this.enabled) {
+            if (voiceBtn) voiceBtn.classList.add('speaking');
+            
+            this.currentUtterance = new SpeechSynthesisUtterance(textToSpeak);
+            this.currentUtterance.rate = 0.9;
+            this.currentUtterance.onend = () => {
+                if (voiceBtn) voiceBtn.classList.remove('speaking');
+                this.currentUtterance = null;
+            };
+            
+            this.synth.speak(this.currentUtterance);
+        }
     }
 };
 

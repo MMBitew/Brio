@@ -113,16 +113,16 @@ body {
 }
 
 /* ============================================
-   STICKY HEADER (Version 4)
+   COMPACT HEADER (Improved - Smaller)
    ============================================ */
 .sticky-header {
     background: white;
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 0 var(--spacing-xl) var(--spacing-md);
+    padding: 12px var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
 }
 
 .header-content {
@@ -131,8 +131,14 @@ body {
     align-items: center;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .app-title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
     color: #000;
     display: flex;
@@ -142,7 +148,7 @@ body {
 
 .stats-inline {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     font-size: 13px;
     font-weight: 700;
     color: var(--primary-color);
@@ -156,11 +162,10 @@ body {
     align-items: center;
     gap: 5px;
     color: var(--primary-color);
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: var(--spacing-lg);
     cursor: pointer;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-sm);
     border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
     background: none;
@@ -173,6 +178,63 @@ body {
 
 .back-btn:active {
     transform: scale(0.98);
+}
+
+/* ============================================
+   HOME BUTTON
+   ============================================ */
+.home-btn {
+    font-size: 24px;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    transition: all var(--transition-fast);
+}
+
+.home-btn:hover {
+    background: #f0fdf4;
+    border-radius: var(--radius-sm);
+}
+
+.home-btn:active {
+    transform: scale(0.98);
+}
+
+/* ============================================
+   VOICE BUTTON (Floating)
+   ============================================ */
+.voice-btn {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-full);
+    background: white;
+    border: 3px solid var(--primary-color);
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    transition: all var(--transition-fast);
+}
+
+.voice-btn:active {
+    transform: scale(0.95);
+}
+
+.voice-btn.speaking {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 /* ============================================

@@ -12,9 +12,15 @@ const BrioRouter = {
      */
     init() {
         // Set up back button handler
-        const backBtn = document.querySelector('.back-btn');
+        const backBtn = document.getElementById('backBtn');
         if (backBtn) {
             backBtn.addEventListener('click', () => this.back());
+        }
+
+        // Set up home button handler
+        const homeBtn = document.getElementById('homeBtn');
+        if (homeBtn) {
+            homeBtn.addEventListener('click', () => this.navigate('home'));
         }
 
         // Load home view
@@ -307,12 +313,26 @@ const BrioRouter = {
     },
 
     /**
-     * Toggle back button visibility
+     * Toggle navigation buttons visibility
      */
     toggleBackButton(show) {
-        const backBtn = document.querySelector('.back-btn');
+        const backBtn = document.getElementById('backBtn');
+        const homeBtn = document.getElementById('homeBtn');
+        
         if (backBtn) {
-            backBtn.style.display = show ? 'inline-flex' : 'none';
+            if (show) {
+                backBtn.classList.remove('hidden');
+            } else {
+                backBtn.classList.add('hidden');
+            }
+        }
+
+        if (homeBtn) {
+            if (show) {
+                homeBtn.classList.remove('hidden');
+            } else {
+                homeBtn.classList.add('hidden');
+            }
         }
     }
 };
