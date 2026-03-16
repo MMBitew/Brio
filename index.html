@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#58cc02">
+    
+    <title>Brio - Skills for Teens</title>
+    <meta name="description" content="Learn academic and life skills at your own pace">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body class="theme-power">
+
+    <!-- Main App Container -->
+    <div id="app">
+        
+        <!-- iPhone Status Bar -->
+        <div class="status-bar">
+            <div class="time" id="currentTime">8:00</div>
+            <div class="indicators">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Sticky Header with Stats -->
+        <div class="sticky-header">
+            <div class="header-content">
+                <div class="app-title">
+                    <span id="headerIcon">🌟</span>
+                    <span id="headerTitle">Brio</span>
+                </div>
+                <div class="stats-inline">
+                    <span id="streakDisplay">🔥 <span id="streakDays">0</span></span>
+                    <span id="xpDisplay">⭐ <span id="totalXP">0</span></span>
+                    <span id="levelDisplay">🏆 <span id="currentLevel">1</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area (Views load here) -->
+        <div id="main-content">
+            <!-- Dynamic content loads here -->
+        </div>
+
+        <!-- Settings Button (Fixed) -->
+        <button id="settingsBtn" class="settings-fab" aria-label="Settings">
+            ⚙️
+        </button>
+
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modal-root"></div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Core JavaScript -->
+    <script src="js/core/state.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/router.js"></script>
+
+    <!-- Components -->
+    <script src="js/components/modal.js"></script>
+    <script src="js/components/audio.js"></script>
+    <script src="js/components/toast.js"></script>
+
+    <!-- Systems -->
+    <script src="js/systems/gamification.js"></script>
+    <script src="js/systems/progress.js"></script>
+    <script src="js/systems/analytics.js"></script>
+
+    <!-- Content -->
+    <script src="js/content/note-taking/data.js"></script>
+    <script src="js/content/note-taking/intro.js"></script>
+    <script src="js/content/note-taking/watch.js"></script>
+    <script src="js/content/note-taking/learn.js"></script>
+    <script src="js/content/note-taking/try.js"></script>
+    <script src="js/content/note-taking/master.js"></script>
+    <script src="js/content/note-taking/note-taking.js"></script>
+
+    <!-- Main App -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>
