@@ -1,0 +1,63 @@
+/* ============================================
+   BRIO - COLOR THEMES
+   4 Themes: Power, Chill, Focus, Party
+   ============================================ */
+
+/* ============================================
+   THEME: POWER MODE (Default - Duolingo Green)
+   ============================================ */
+body.theme-power,
+body:not([class*="theme-"]) {
+    --primary-color: #58cc02;
+    --primary-dark: #46a302;
+    --primary-light: #89e219;
+}
+
+.theme-power-preview {
+    background: linear-gradient(135deg, #58cc02, #89e219);
+}
+
+/* ============================================
+   THEME: CHILL VIBES (Warm Orange)
+   ============================================ */
+body.theme-chill {
+    --primary-color: #ff9500;
+    --primary-dark: #e67e00;
+    --primary-light: #ffb340;
+}
+
+.theme-chill-preview {
+    background: linear-gradient(135deg, #ff9500, #ffb340);
+}
+
+/* ============================================
+   THEME: FOCUS ZONE (Cool Blue)
+   ============================================ */
+body.theme-focus {
+    --primary-color: #3b82f6;
+    --primary-dark: #2563eb;
+    --primary-light: #60a5fa;
+}
+
+.theme-focus-preview {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+/* ============================================
+   THEME: PARTY TIME (Deep Pink)
+   ============================================ */
+body.theme-party {
+    --primary-color: #d53f8c;
+    --primary-dark: #a5277a;
+    --primary-light: #ed64a6;
+}
+
+.theme-party-preview {
+    background: linear-gradient(135deg, #d53f8c, #ed64a6);
+}
+
+/* ============================================
+   THEME PERSISTENCE
+   ============================================ */
+/* Theme is applied to body tag via JavaScript */
+/* Saved in localStorage as 'brio-theme' */
